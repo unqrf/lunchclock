@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>LUNCH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14vw;
+  line-height: 15vw;
+  width: 100%;
+  text-align: center;
+  margin-top: 35vh;
+}
+</style>
+</head>
+<body>
+<h1>Loading...</h1>
+<script>
+window.refresh = () => {
+  var hour = new Date().getHours();
+  var el = document.getElementsByTagName('h1').item(0);
+  if (el) {
+    if (hour < 12) {
+      el.innerText = 'Before lunch.';
+    } else if (hour == 12) {
+      el.innerText = 'Lunch.';
+    } else {
+      el.innerText = 'After lunch.';
+    }
+  }
+  setTimeout(window.refresh, 1000);
+};
+window.refresh();
+</script>
+</body>
+</html>
