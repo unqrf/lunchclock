@@ -21,10 +21,14 @@ h1 {
 <h1>Loading...</h1>
 <script>
 window.refresh = () => {
-  var hour = new Date().getHours();
-  var el = document.getElementsByTagName('h1').item(0);
+  let date = new Date();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let el = document.getElementsByTagName('h1').item(0);
   if (el) {
-    if (hour < 12) {
+    if (hour == 11 && minute >= 50) {
+      el.innerText = 'Almost lunch.';
+    } else if (hour < 12) {
       el.innerText = 'Before lunch.';
     } else if (hour == 12) {
       el.innerText = 'Lunch.';
