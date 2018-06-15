@@ -22,11 +22,14 @@ h1 {
 <script>
 window.refresh = () => {
   let date = new Date();
+  let day = date.getDay();
   let hour = date.getHours();
   let minute = date.getMinutes();
   let el = document.getElementsByTagName('h1').item(0);
   if (el) {
-    if (hour == 11 && minute >= 50) {
+    if (day == 5 && hour >= 16) { // Friday after 16:00
+      el.innerText = 'Beer.';
+    } else if (hour == 11 && minute >= 50) {
       el.innerText = 'Almost lunch.';
     } else if (hour < 12) {
       el.innerText = 'Before lunch.';
